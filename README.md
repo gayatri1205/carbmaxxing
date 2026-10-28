@@ -2,6 +2,8 @@
 
 A client-side calculator for carbohydrate loading, hydration, and race-day fueling.
 
+Live site: https://gayatri1205.github.io/carbmaxxing/
+
 The app supports 5K, 10K, half-marathon, marathon, and custom race distances. It can also export a themed race plan as a PDF.
 
 ## Local development
