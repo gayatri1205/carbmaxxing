@@ -107,6 +107,18 @@ button, input { font: inherit; }
 
 .panel-title { margin-bottom: 28px; }
 
+.unit-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--cm-outline) 72%, transparent);
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--cm-secondary-container) 58%, transparent);
+}
+
 .title-icon,
 .result-icon,
 .distance-icon {
@@ -325,6 +337,7 @@ button, input { font: inherit; }
   .stage-progress { margin-bottom: 42px; }
   .screen-heading { margin-bottom: 32px; }
   .profile-panel, .single-question-panel { padding: 24px 20px; }
+  .unit-selector { align-items: flex-start; }
   .profile-grid { grid-template-columns: 1fr; }
   .distance-grid { grid-template-columns: 1fr; }
   .distance-card .MuiCardActionArea-root { min-height: 130px; }
@@ -337,9 +350,10 @@ button, input { font: inherit; }
 @media (max-width: 520px) {
   .top-app-bar .MuiToolbar-root { align-items: center; gap: 12px; }
   .wordmark { max-width: 105px; font-size: 1.55rem !important; line-height: 0.85 !important; }
-  .top-app-bar .MuiStack-root { gap: 6px; }
-  .top-app-bar .MuiToggleButton-root { min-width: 55px; min-height: 36px; padding-inline: 8px; font-size: 0.78rem; }
   .top-app-bar .MuiIconButton-root { width: 44px; height: 44px; }
+  .unit-selector { flex-direction: column; gap: 14px; }
+  .unit-selector .MuiToggleButtonGroup-root { width: 100%; }
+  .unit-selector .MuiToggleButton-root { flex: 1; }
   .screen-heading .MuiChip-root { margin-bottom: 18px; }
   .distance-card .MuiCardContent-root { grid-template-columns: auto 1fr auto; gap: 16px; }
   .distance-icon { width: 56px; height: 56px; }

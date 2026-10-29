@@ -327,15 +327,9 @@ export function App() {
         <AppBar position="static" color="transparent" elevation={0} className="top-app-bar">
           <Toolbar>
             <Typography className="wordmark" aria-label="Carb Maxxing">carb<span>.maxxing</span></Typography>
-            <Stack direction="row" spacing={{ xs: 1, sm: 2 }} sx={{ alignItems: "center" }}>
-              <ToggleButtonGroup value={unitSystem} exclusive size="small" aria-label="Measurement system" onChange={(_, value) => value && setUnitSystem(value)}>
-                <ToggleButton value="metric">Metric</ToggleButton>
-                <ToggleButton value="us">US</ToggleButton>
-              </ToggleButtonGroup>
-              <IconButton aria-label={mode === "light" ? "Use dark theme" : "Use light theme"} onClick={() => setMode((current) => current === "light" ? "dark" : "light")}>
-                {mode === "light" ? <DarkModeRounded /> : <LightModeRounded />}
-              </IconButton>
-            </Stack>
+            <IconButton aria-label={mode === "light" ? "Use dark theme" : "Use light theme"} onClick={() => setMode((current) => current === "light" ? "dark" : "light")}>
+              {mode === "light" ? <DarkModeRounded /> : <LightModeRounded />}
+            </IconButton>
           </Toolbar>
         </AppBar>
 
@@ -350,8 +344,18 @@ export function App() {
                   <Paper variant="outlined" className="profile-panel">
                     <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }} className="panel-title">
                       <Box className="title-icon"><PersonRounded /></Box>
-                      <Box><Typography variant="h3">Your profile</Typography><Typography color="text.secondary" variant="body2">You can change units at any time.</Typography></Box>
+                      <Box><Typography variant="h3">Your profile</Typography><Typography color="text.secondary" variant="body2">Choose the units used across your plan.</Typography></Box>
                     </Stack>
+                    <Box className="unit-selector">
+                      <Box>
+                        <Typography component="p" fontWeight={750}>Measurement system</Typography>
+                        <Typography color="text.secondary" variant="body2">This changes the height, weight, distance, and hydration units.</Typography>
+                      </Box>
+                      <ToggleButtonGroup value={unitSystem} exclusive size="small" aria-label="Measurement system" onChange={(_, value) => value && setUnitSystem(value)}>
+                        <ToggleButton value="metric">Metric</ToggleButton>
+                        <ToggleButton value="us">US</ToggleButton>
+                      </ToggleButtonGroup>
+                    </Box>
                     <Box className="profile-grid">
                       <TextField label="Age" type="number" value={age} onChange={(event) => setAge(event.target.value)} slotProps={{ htmlInput: { min: 13, max: 100 } }} helperText="Years" />
                       {unitSystem === "metric" ? (
